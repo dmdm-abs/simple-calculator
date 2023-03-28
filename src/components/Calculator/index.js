@@ -1,9 +1,10 @@
 import React from 'react';
 import Title from './Title';
-
-const Calculator = () =>
+import Container from './Container';
+const Calculator = (context) =>
 	<div>
 		<Title/>
+		<Container { ...context }/>
 	</div>;
 
 export default Calculator;
