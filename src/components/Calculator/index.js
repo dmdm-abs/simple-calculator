@@ -1,6 +1,9 @@
 import React from 'react';
+import Title from './Title';
 
 const Calculator = () =>
-	<div>Calculator</div>;
+	<div>
+		<Title/>
+	</div>;
 
 export default Calculator;

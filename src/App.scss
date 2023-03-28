@@ -1,5 +1,12 @@
 .App {
 	text-align: center;
+	margin: 150px 750px;
+
+	.title {
+		padding: 10px;
+		color: gray;
+		border: 1px solid black;
+	}
 
 	button {
 		font-weight: bold;
