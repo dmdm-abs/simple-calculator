@@ -1,13 +1,12 @@
 import React from 'react';
+import Operator from './Operator';
 
 const Operators = (context) => {
 	const { state: { operators }} = context;
 
 	return <div>
 		{operators.map((operator, key) =>
-			<button
-				key={ key }
-			>{operator}</button>)}
+			<Operator key={ key } { ...{ ...context, data: { operator }} }/>)}
 	</div>;
 };
 
