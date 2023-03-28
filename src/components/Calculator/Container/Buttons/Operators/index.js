@@ -6,7 +6,7 @@ const Operators = (context) => {
 
 	return <div>
 		{operators.map((operator, key) =>
-			<Operator key={ key } { ...{ ...context, data: { operator }} }/>)}
+			<Operator key={ key } { ...{ ...context, data: operator } }/>)}
 	</div>;
 };
 
