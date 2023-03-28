@@ -2,7 +2,7 @@ import React from 'react';
 import Operator from './Operator';
 
 const Operators = (context) => {
-	const { state: { operators }} = context;
+	const { config: { operators }} = context;
 
 	return <div>
 		{operators.map((operator, key) =>

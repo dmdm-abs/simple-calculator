@@ -1,5 +1,3 @@
-const seed = {
-	operators: ['+', '-', '*', '/'],
-};
+const seed = {};
 
 export default seed;

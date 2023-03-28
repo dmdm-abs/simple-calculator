@@ -1,3 +1,5 @@
-const config = {};
+const config = {
+	operators: ['+', '-', '*', '/'],
+};
 
 export default config;
