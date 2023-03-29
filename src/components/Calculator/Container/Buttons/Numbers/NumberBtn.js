@@ -1,11 +1,6 @@
 import React from 'react';
 
-const NumberBtn = (context) => {
-	const { data: number } = context;
-
-	return (
-		<button>{number}</button>
-	);
-};
+const NumberBtn = ({ actions: { addNumber }, data: number }) =>
+	<button onClick={ () => addNumber(number) }>{number}</button>;
 
 export default NumberBtn;
