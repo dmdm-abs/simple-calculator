@@ -1,5 +1,5 @@
 const seed = {
-	display: {
+	operations: {
 		firstOperand: '',
 		secondOperand: '',
 		operator: '',

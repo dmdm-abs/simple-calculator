@@ -1,11 +1,11 @@
 import CalcManager from '../services/CalcManager';
 
 const addNumber = (context) => ({
-	display: CalcManager.addNumber(context),
+	operations: CalcManager.addNumber(context),
 });
 
 const setOperator = (context) => ({
-	display: CalcManager.setOperator(context),
+	operations: CalcManager.setOperator(context),
 });
 
 const getResult = (context) => ({

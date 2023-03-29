@@ -1,27 +1,27 @@
-const addNumber = ({ state: { display }, data: number }) => {
-	const { operator } = display;
+const addNumber = ({ state: { operations }, data: number }) => {
+	const { operator } = operations;
 	const operand = operator ? 'secondOperand' : 'firstOperand';
 
 	return {
-		...display,
-		[operand]: display[operand].concat(number),
+		...operations,
+		[operand]: operations[operand].concat(number),
 	};
 };
 
-const setOperator = ({ state: { display }, data }) => {
-	const { firstOperand } = display;
+const setOperator = ({ state: { operations }, data }) => {
+	const { firstOperand } = operations;
 
 	const firstOperandValue = firstOperand || '0';
 
 	return {
-		...display,
+		...operations,
 		firstOperand: firstOperandValue,
 		operator: data,
 	};
 };
 
-const getResult = ({ state: { display }}) => {
-	const { firstOperand, secondOperand, operator } = display;
+const getResult = ({ state: { operations }}) => {
+	const { firstOperand, secondOperand, operator } = operations;
 
 	const result = secondOperand
 		? eval(`${ firstOperand } ${ operator } ${ secondOperand }`)
