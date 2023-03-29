@@ -24,11 +24,18 @@ const displayResult = ({ state: { operations: {
 	firstOperand, secondOperand, operator,
 }}}) => `${ firstOperand } ${ operator } ${ secondOperand }`;
 
-const calcResult = ({ state: { operations, result }}) => {
-	const { firstOperand, secondOperand } = operations;
+const calculations = {
+	'+': (firstOperand, secondOperand) => firstOperand + secondOperand,
+	'-': (firstOperand, secondOperand) => firstOperand - secondOperand,
+	'*': (firstOperand, secondOperand) => firstOperand * secondOperand,
+	'/': (firstOperand, secondOperand) => firstOperand / secondOperand,
+};
+
+const calcResult = ({ state: { operations }}) => {
+	const { firstOperand, secondOperand, operator } = operations;
 
 	return secondOperand
-		? eval(result)
+		? calculations[operator](Number(firstOperand), Number(secondOperand))
 		: firstOperand || '0';
 };
 
