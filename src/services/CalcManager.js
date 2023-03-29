@@ -4,21 +4,15 @@ const addOperand = ({ state: { operations }, data: number }) => {
 
 	return {
 		...operations,
-		[operand]: operations[operand].concat(number),
+		// eslint-disable-next-line no-magic-numbers
+		[operand]: operations[operand] * 10 + number,
 	};
 };
 
-const setOperator = ({ state: { operations }, data }) => {
-	const { firstOperand } = operations;
-
-	const firstOperandValue = firstOperand || '0';
-
-	return {
-		...operations,
-		firstOperand: firstOperandValue,
-		operator: data,
-	};
-};
+const setOperator = ({ state: { operations }, data }) => ({
+	...operations,
+	operator: data,
+});
 
 const displayResult = ({ state: { operations: {
 	firstOperand, secondOperand, operator,
@@ -36,7 +30,7 @@ const calcResult = ({ state: { operations }}) => {
 
 	return secondOperand
 		? calculations[operator](Number(firstOperand), Number(secondOperand))
-		: firstOperand || '0';
+		: firstOperand;
 };
 
 const doOperations = (context) => {

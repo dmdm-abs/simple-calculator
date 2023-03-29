@@ -1,6 +1,6 @@
 const seed = {
 	operations: {
-		firstOperand: '',
+		firstOperand: 0,
 		secondOperand: '',
 		operator: '',
 	},
