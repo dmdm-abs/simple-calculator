@@ -8,8 +8,8 @@ const setOperator = (context) => ({
 	operations: CalcManager.setOperator(context),
 });
 
-const setResult = (context) => ({
-	result: CalcManager.setResult(context),
+const displayResult = (context) => ({
+	result: CalcManager.displayResult(context),
 });
 
 const calcResult = (context) => ({
@@ -19,7 +19,7 @@ const calcResult = (context) => ({
 const actions = {
 	addOperand,
 	setOperator,
-	setResult,
+	displayResult,
 	calcResult,
 };
 

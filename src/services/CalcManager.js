@@ -20,7 +20,7 @@ const setOperator = ({ state: { operations }, data }) => {
 	};
 };
 
-const setResult = ({ state: { operations: {
+const displayResult = ({ state: { operations: {
 	firstOperand, secondOperand, operator,
 }}}) => `${ firstOperand } ${ operator } ${ secondOperand }`;
 
@@ -36,13 +36,13 @@ const doOperations = (context) => {
 	const { actions, data } = context;
 
 	actions.setOperator(data);
-	actions.setResult();
+	actions.displayResult();
 };
 
 const CalcManager = {
 	addOperand,
 	setOperator,
-	setResult,
+	displayResult,
 	calcResult,
 	doOperations,
 };
