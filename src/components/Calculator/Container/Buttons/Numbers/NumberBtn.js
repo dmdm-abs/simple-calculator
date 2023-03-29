@@ -1,8 +1,8 @@
 import React from 'react';
 
-const NumberBtn = ({ actions: { addNumber, setResult }, data: number }) =>
+const NumberBtn = ({ actions: { addOperand, setResult }, data: number }) =>
 	<button onClick={ () => {
-		addNumber(number);
+		addOperand(number);
 		setResult();
 	} }
 	>{number}</button>;

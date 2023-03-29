@@ -1,7 +1,7 @@
 import CalcManager from '../services/CalcManager';
 
-const addNumber = (context) => ({
-	operations: CalcManager.addNumber(context),
+const addOperand = (context) => ({
+	operations: CalcManager.addOperand(context),
 });
 
 const setOperator = (context) => ({
@@ -17,7 +17,7 @@ const getResult = (context) => ({
 });
 
 const actions = {
-	addNumber,
+	addOperand,
 	setOperator,
 	setResult,
 	getResult,

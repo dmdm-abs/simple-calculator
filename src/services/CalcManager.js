@@ -1,4 +1,4 @@
-const addNumber = ({ state: { operations }, data: number }) => {
+const addOperand = ({ state: { operations }, data: number }) => {
 	const { operator } = operations;
 	const operand = operator ? 'secondOperand' : 'firstOperand';
 
@@ -40,7 +40,7 @@ const doOperations = (context) => {
 };
 
 const CalcManager = {
-	addNumber,
+	addOperand,
 	setOperator,
 	setResult,
 	getResult,
