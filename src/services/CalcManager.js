@@ -20,20 +20,16 @@ const setOperator = ({ state: { operations }, data }) => {
 	};
 };
 
-const setResult = ({ state: { operations }}) => {
-	const { firstOperand, secondOperand, operator } = operations;
-
-	return `${ firstOperand } ${ operator } ${ secondOperand }`;
-};
+const setResult = ({ state: { operations: {
+	firstOperand, secondOperand, operator,
+}}}) => `${ firstOperand } ${ operator } ${ secondOperand }`;
 
 const getResult = ({ state: { operations, result }}) => {
 	const { firstOperand, secondOperand } = operations;
 
-	const answer = secondOperand
+	return secondOperand
 		? eval(result)
 		: firstOperand || '0';
-
-	return answer;
 };
 
 const doOperations = (context) => {
