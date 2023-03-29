@@ -31,7 +31,7 @@ const getResult = ({ state: { operations, result }}) => {
 
 	const answer = secondOperand
 		? eval(result)
-		: firstOperand;
+		: firstOperand || '0';
 
 	return answer;
 };
