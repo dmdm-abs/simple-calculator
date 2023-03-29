@@ -24,7 +24,7 @@ const setResult = ({ state: { operations: {
 	firstOperand, secondOperand, operator,
 }}}) => `${ firstOperand } ${ operator } ${ secondOperand }`;
 
-const getResult = ({ state: { operations, result }}) => {
+const calcResult = ({ state: { operations, result }}) => {
 	const { firstOperand, secondOperand } = operations;
 
 	return secondOperand
@@ -43,7 +43,7 @@ const CalcManager = {
 	addOperand,
 	setOperator,
 	setResult,
-	getResult,
+	calcResult,
 	doOperations,
 };
 

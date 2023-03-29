@@ -12,15 +12,15 @@ const setResult = (context) => ({
 	result: CalcManager.setResult(context),
 });
 
-const getResult = (context) => ({
-	result: CalcManager.getResult(context),
+const calcResult = (context) => ({
+	result: CalcManager.calcResult(context),
 });
 
 const actions = {
 	addOperand,
 	setOperator,
 	setResult,
-	getResult,
+	calcResult,
 };
 
 export default actions;
