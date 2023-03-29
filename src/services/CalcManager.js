@@ -20,20 +20,35 @@ const setOperator = ({ state: { operations }, data }) => {
 	};
 };
 
-const getResult = ({ state: { operations }}) => {
+const setResult = ({ state: { operations }}) => {
 	const { firstOperand, secondOperand, operator } = operations;
 
-	const result = secondOperand
-		? eval(`${ firstOperand } ${ operator } ${ secondOperand }`)
+	return `${ firstOperand } ${ operator } ${ secondOperand }`;
+};
+
+const getResult = ({ state: { operations, result }}) => {
+	const { firstOperand, secondOperand } = operations;
+
+	const answer = secondOperand
+		? eval(result)
 		: firstOperand;
 
-	return result;
+	return answer;
+};
+
+const doOperations = (context) => {
+	const { actions, data } = context;
+
+	actions.setOperator(data);
+	actions.setResult();
 };
 
 const CalcManager = {
 	addNumber,
 	setOperator,
+	setResult,
 	getResult,
+	doOperations,
 };
 
 export default CalcManager;

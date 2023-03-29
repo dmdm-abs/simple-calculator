@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Display = () =>
-	<div>Display</div>;
+const Display = ({ state: { result }}) =>
+	<div>{result}</div>;
 
 export default Display;
