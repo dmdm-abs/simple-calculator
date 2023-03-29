@@ -8,9 +8,14 @@ const setOperator = (context) => ({
 	display: CalcManager.setOperator(context),
 });
 
+const getResult = (context) => ({
+	result: CalcManager.getResult(context),
+});
+
 const actions = {
 	addNumber,
 	setOperator,
+	getResult,
 };
 
 export default actions;

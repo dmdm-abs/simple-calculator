@@ -20,9 +20,20 @@ const setOperator = ({ state: { display }, data }) => {
 	};
 };
 
+const getResult = ({ state: { display }}) => {
+	const { firstOperand, secondOperand, operator } = display;
+
+	const result = secondOperand
+		? eval(`${ firstOperand } ${ operator } ${ secondOperand }`)
+		: firstOperand;
+
+	return result;
+};
+
 const CalcManager = {
 	addNumber,
 	setOperator,
+	getResult,
 };
 
 export default CalcManager;
