@@ -43,8 +43,9 @@ const updateOperations = (context) => {
 };
 
 const doOperations = (context) => {
-	const { actions, data } = context;
+	const { state: { operations: { secondOperand }}, actions, data } = context;
 
+	secondOperand && actions.calcResult();
 	actions.setOperator(data);
 	actions.displayResult();
 };
