@@ -14,6 +14,7 @@ const displayResult = (context) => ({
 
 const calcResult = (context) => ({
 	result: CalcManager.calcResult(context),
+	operations: CalcManager.updateOperations(context),
 });
 
 const actions = {

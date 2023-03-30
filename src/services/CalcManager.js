@@ -33,6 +33,15 @@ const calcResult = ({ state: { operations }}) => {
 		: firstOperand;
 };
 
+const updateOperations = (context) => {
+	const { seed: { operations }} = context;
+
+	return {
+		...operations,
+		firstOperand: calcResult(context),
+	};
+};
+
 const doOperations = (context) => {
 	const { actions, data } = context;
 
@@ -45,6 +54,7 @@ const CalcManager = {
 	setOperator,
 	displayResult,
 	calcResult,
+	updateOperations,
 	doOperations,
 };
 
